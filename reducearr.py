@@ -7,7 +7,7 @@ class Solution:
         total_count = 0
 
         for index, count in enumerate(
-            sorted(collections.Counter(arr).values(), reverse=True)
+            sorted(Counter(arr).values(), reverse=True)
         ):
             total_count += count
 
