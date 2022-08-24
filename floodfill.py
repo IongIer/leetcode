@@ -11,16 +11,21 @@ class Solution:
 
         def dfs(image, sr, sc, initial, color):
             nonlocal row, col
+            l, r, u, d = sr - 1, sr + 1, sc - 1, sc + 1
             if image[sr][sc] == initial:
                 image[sr][sc] = color
-                if 0 <= sr - 1 <= row and 0 <= sc <= col:
-                    dfs(image, sr - 1, sc, initial, color)
-                if 0 <= sr + 1 <= row and 0 <= sc <= col:
-                    dfs(image, sr + 1, sc, initial, color)
-                if 0 <= sr <= row and 0 <= sc - 1 <= col:
-                    dfs(image, sr, sc - 1, initial, color)
-                if 0 <= sr <= row and 0 <= sc + 1 <= col:
-                    dfs(image, sr, sc + 1, initial, color)
+                if 0 <= l <= row and 0 <= sc <= col:
+                    if image[l][sc] == initial:
+                        dfs(image, l, sc, initial, color)
+                if 0 <= r <= row and 0 <= sc <= col:
+                    if image[r][sc] == initial:
+                        dfs(image, r, sc, initial, color)
+                if 0 <= sr <= row and 0 <= u <= col:
+                    if image[sr][u] == initial:
+                        dfs(image, sr, u, initial, color)
+                if 0 <= sr <= row and 0 <= d <= col:
+                    if image[sr][d] == initial:
+                        dfs(image, sr, d, initial, color)
 
         if initial != color:
             dfs(image, sr, sc, initial, color)
