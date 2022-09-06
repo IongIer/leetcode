@@ -5,4 +5,4 @@ class Solution:
         for i in range(length // 2):
             if possible_palindrome[i] != possible_palindrome[~i]:
                 return False
-        return True 
+        return True

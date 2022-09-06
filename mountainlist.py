@@ -1,6 +1,6 @@
 from typing import List
 
-#My very poor very slow solutin
+# My very poor very slow solutin
 def validMountainArray(arr: List[int]) -> bool:
     if len(arr) < 3:
         return False

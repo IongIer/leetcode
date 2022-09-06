@@ -6,9 +6,7 @@ class Solution:
     def minSetSize(self, arr: List[int]) -> int:
         total_count = 0
 
-        for index, count in enumerate(
-            sorted(Counter(arr).values(), reverse=True)
-        ):
+        for index, count in enumerate(sorted(Counter(arr).values(), reverse=True)):
             total_count += count
 
             if total_count >= len(arr) // 2:

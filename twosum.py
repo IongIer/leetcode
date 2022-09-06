@@ -3,6 +3,7 @@ from typing import List
 
 ## My naive Solution
 
+
 def twoSum(nums: List[int], target: int) -> List[int]:
     pairs = combinations(nums, 2)
     for combination in pairs:
@@ -12,7 +13,7 @@ def twoSum(nums: List[int], target: int) -> List[int]:
             first_i = nums.index(first)
             second_i = nums.index(second)
             if first == second:
-                return [first_i, nums[first_i+1:].index(second)+first_i+1]
+                return [first_i, nums[first_i + 1 :].index(second) + first_i + 1]
             return [first_i, second_i]
 
 
@@ -25,4 +26,4 @@ class Solution:
         for i in range(len(nums)):
             complement = target - nums[i]
             if complement in hashmap and hashmap[complement] != i:
-                return [i, hashmap[complement]] 
+                return [i, hashmap[complement]]

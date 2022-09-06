@@ -3,6 +3,7 @@
 # Return the running sum of nums.
 from typing import List
 
+
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
         running = []

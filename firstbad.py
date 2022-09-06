@@ -1,6 +1,6 @@
 def firstBadVersion(n) -> int:
     l = 0
-    r = len(n)-1
+    r = len(n) - 1
     while l <= r:
         mid = (l + r) // 2
         if n[mid]:
@@ -10,4 +10,5 @@ def firstBadVersion(n) -> int:
             l = mid - 1
     return bad
 
-print(firstBadVersion([0,0,0,1,1]))
+
+print(firstBadVersion([0, 0, 0, 1, 1]))
