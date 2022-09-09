@@ -1,14 +1,19 @@
-def firstBadVersion(n) -> int:
-    l = 0
-    r = len(n) - 1
-    while l <= r:
-        mid = (l + r) // 2
-        if n[mid]:
-            r = mid
-            bad = mid
-        else:
-            l = mid - 1
-    return bad
+# The isBadVersion API is already defined for you.
+def isBadVersion(version: int) -> bool:
+    pass
 
 
-print(firstBadVersion([0, 0, 0, 1, 1]))
+class Solution:
+    def firstBadVersion(self, n: int) -> int:
+        bad_version = set()
+        mid = (n + 1) // 2
+        while mid >= 1 and mid <= n:
+            if isBadVersion(mid):
+                if mid not in bad_version:
+                    bad_version.add(mid)
+                    n = mid
+                    mid = (mid + 1) // 2
+                else:
+                    return mid
+            else:
+                mid = (mid + n + 1) // 2
