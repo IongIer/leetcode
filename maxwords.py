@@ -3,5 +3,4 @@ class Solution:
         maximum = 0
         for s in sentences:
             maximum = max(maximum, len(s.split()))
-        return maximum           
-        
+        return maximum
