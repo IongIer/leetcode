@@ -6,6 +6,8 @@ class Solution:
         length = len(s)
         if length == 0 or length == 1:
             return length
+
+        #you don't need both a queue and a set here, there is a better solution
         seen = deque()
         unique = set()
         curr = 0
