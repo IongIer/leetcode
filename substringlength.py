@@ -7,7 +7,7 @@ class Solution:
         if length == 0 or length == 1:
             return length
 
-        #you don't need both a queue and a set here, there is a better solution
+        # you don't need both a queue and a set here, there is a better solution
         seen = deque()
         unique = set()
         curr = 0
@@ -23,7 +23,7 @@ class Solution:
                 seen.append(v)
                 unique.add(v)
                 curr = len(seen)
-                
+
             else:
                 unique.add(v)
                 seen.append(v)

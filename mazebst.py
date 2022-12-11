@@ -1,5 +1,7 @@
 from collections import deque
 from typing import List
+
+
 class Solution:
     def nearestExit(self, maze: List[List[str]], entrance: List[int]) -> int:
         walk = [(0, 1), (0, -1), (1, 0), (-1, 0)]

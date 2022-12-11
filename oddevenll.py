@@ -11,7 +11,10 @@ class Solution:
         current_even = head.next
         second_half_head = current_even
         while current_even and current_even.next:
-            current_odd.next, current_even.next = current_odd.next.next, current_even.next.next
+            current_odd.next, current_even.next = (
+                current_odd.next.next,
+                current_even.next.next,
+            )
             current_odd, current_even = current_odd.next, current_even.next
         current_odd.next = second_half_head
         return head
