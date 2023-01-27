@@ -1,7 +1,6 @@
 from collections import deque
-from pprint import pprint
 
-board = [[-1,1,2,-1],[2,13,15,-1],[-1,10,-1,-1],[-1,6,2,8]]
+
 def snakesAndLadders(board: list[list[int]]) -> int:
     def build_array(board):
         snake = []
@@ -23,15 +22,12 @@ def snakesAndLadders(board: list[list[int]]) -> int:
                         snake.append(len(snake))
             i += 1
         return snake
-    snake = build_array(board)
-    print(snake)
+
     def bfs(snake):
         queue = deque()
         seen = {0}
-        steps = 1
-        for i in range(1, min(7, len(snake))):
-            queue.append(snake[i])
-            seen.add(i)
+        steps = 0
+        queue.append(snake[0])
         while queue:
             for _ in range(len(queue)):
                 curr = queue.popleft()
@@ -42,10 +38,12 @@ def snakesAndLadders(board: list[list[int]]) -> int:
                     if i not in seen:
                         queue.append(snake[i])
                         seen.add(i)
-            steps +=1
+            steps += 1
         return -1
+
     return bfs(snake)
 
-for x in board:
-    print(x)
+
+snake = build_array(board)
+
 print(snakesAndLadders(board))
