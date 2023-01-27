@@ -31,7 +31,6 @@ def snakesAndLadders(board: list[list[int]]) -> int:
         while queue:
             for _ in range(len(queue)):
                 curr = queue.popleft()
-                print(curr, steps, snake[-1])
                 if curr == snake[-1]:
                     return steps
                 for i in range(curr + 1, min(curr + 7, len(snake))):
